@@ -1,10 +1,12 @@
 import pandas as pd
 import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, accuracy_score
 from datasets import Dataset, DatasetDict
 import openai
 import config
+import train
+
 
 DEVICE = "cuda:0" if torch.cuda.is_available() else "cpu"
 openai.api_key = config.key
@@ -50,32 +52,7 @@ def split_data(df: pd.DataFrame) -> DatasetDict:
     })
     return dataset_dict
 
-def get_model_args(dataset_dict: DatasetDict):
-    batch_size = 8
-    logging_steps = len(dataset_dict["train"]) // batch_size
-    model_name = f"distilbert-base-cased-finetuned"
-    training_args = TrainingArguments(output_dir=model_name,
-                                    num_train_epochs=2,
-                                    learning_rate=2e-5,
-                                    per_device_train_batch_size=batch_size,
-                                    per_device_eval_batch_size=batch_size,
-                                    weight_decay=0.01,
-                                    evaluation_strategy="epoch",
-                                    disable_tqdm=False,
-                                    logging_steps=logging_steps,
-                                    log_level="error",
-                                    optim='adamw_torch'
-                                    )
-    return training_args
 
-def train_model(model: torch.nn.Module, dataset_dict: DatasetDict, training_args: TrainingArguments, tokenizer: AutoTokenizer):
-    trainer = Trainer(model=model,
-                    args=training_args,
-                    train_dataset=dataset_dict["train"],
-                    eval_dataset=dataset_dict["validation"],
-                    tokenizer=tokenizer)
-    trainer.train()
-    return trainer
 
 if "__main__" == __name__:
     Suicide_Detection = load_data(r"data\Suicide_Detection.csv")
@@ -94,5 +71,8 @@ if "__main__" == __name__:
     model = load_model("distilbert-base-cased")
     dataset_dict = split_data(df)
 
-    training_args = get_model_args(dataset_dict)
-    trainer = train_model(model, dataset_dict, training_args, tokenizer)
+    training_args = train.get_model_args(dataset_dict)
+    trainer = train.train_model(model, dataset_dict, training_args, tokenizer)
+    predictor = train.get_predictions(trainer, dataset_dict)
+    train.get_accuracy(predictor)
+    trainer.save_model()
