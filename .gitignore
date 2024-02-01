@@ -1,7 +1,19 @@
+# data
+data
+*.pdf
+
+# keys 
+config.py
+
+# models
+distilbert-base-cased-finetuned
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
 *$py.class
+
 
 # C extensions
 *.so
