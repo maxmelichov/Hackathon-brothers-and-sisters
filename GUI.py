@@ -1,37 +1,26 @@
-import tkinter as tk
-from sklearn.linear_model import LinearRegression
+import customtkinter as ctk
+import model_inferece
 
 # Create a Tkinter window
-window = tk.Tk()
+window = ctk.CTk()
 window.title("LLM Model GUI")
 
+# Set the window size
+window.geometry("500x300")
+
 # Create input fields
-input_label = tk.Label(window, text="Enter the input:")
+input_label = ctk.CTkLabel(window, text="Enter the input:")
 input_label.pack()
-input_entry = tk.Entry(window)
+input_entry = ctk.CTkEntry(window)
 input_entry.pack()
 
 # Create a button to trigger the prediction
-predict_button = tk.Button(window, text="Predict", command=lambda: predict(input_entry.get()))
+predict_button = ctk.CTkButton(window, text="Predict", command=lambda: model_inferece.predict(input_entry.get()))
 predict_button.pack()
 
 # Create an output label
-output_label = tk.Label(window, text="Prediction:")
+output_label = ctk.CTkLabel(window, text="Prediction:")
 output_label.pack()
-
-# Function to perform the prediction
-def predict(input_value):
-    # Create an instance of the Linear Regression model
-    model = LinearRegression()
-
-    # Train the model with your data
-    # ...
-
-    # Perform the prediction
-    prediction = model.predict([[float(input_value)]])
-
-    # Update the output label
-    output_label.config(text="Prediction: " + str(prediction))
 
 # Run the Tkinter event loop
 window.mainloop()
