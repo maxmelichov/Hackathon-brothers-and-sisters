@@ -14,6 +14,21 @@ Our team at Hackathon Brothers and Sisters presents a powerful tool for detectin
 
 While currently capable of binary detection, our roadmap includes advancing it into a multi-class classification task ranging from 1 to 5 severity levels.
 
+Examples
+---------
+
+**Example 1:**
+
+Input: "Social Media I recently deleted youtube and instagram so I could focus on school. I have promptly shifted that time to reddit. Should I delete reddit?"
+
+![Example of a text from a healthy person](healfy.jpg)
+
+**Example 2:**
+
+Input: "Truly lost and aloneSlowly losing everyone in my life, I've been hemorrhaging friends and family for the past 6 years I'd say.\n\nThe only person in my family that still has any emotion for me is my aunty who I rarely even see anymore. I have next to no friends that I see anymore and even when I do I can tell they're itching to leave."
+
+![Example of a text from a person showing signs of depression](not%20healfy.jpg.jpg)
+
 Key Features
 ------------
 

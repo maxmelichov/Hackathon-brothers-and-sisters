@@ -46,6 +46,7 @@ class GUI:
         """
         Predicts the class of the input text.
         """
+        self.input_entry.delete(0,tk.END)
         prediction = classifier(text)
         if prediction[0]["label"] == "LABEL_0":
             output_text = "You are healthy"
