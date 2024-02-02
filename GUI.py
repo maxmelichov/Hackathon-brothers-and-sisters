@@ -6,10 +6,17 @@ classifier = pipeline('text-classification', model=model_name)
 
 class GUI:
     def __init__(self) -> None:
+        """
+        Initializes the GUI class.
+        """
         self.window = ctk.CTk()
         self.window.protocol("WM_DELETE_WINDOW", self.exit)
         self.create_widgets()
+
     def create_widgets(self):
+        """
+        Creates the widgets for the GUI.
+        """
         # Create a Tkinter window
         self.window.title("LLM Model GUI")
 
@@ -35,10 +42,20 @@ class GUI:
         # Run the Tkinter event loop
         self.window.mainloop()
 
+    def predict(self, text):
+        """
+        Predicts the class of the input text.
+        """
+        prediction = classifier(text)
+        if prediction[0]["label"] == "LABEL_0":
+            output_text = "You are healthy"
+        else:
+            output_text = "Please consult a doctor"
+        self.label.configure(text = output_text)
+
     def exit(self):
         exit()
 
 
 if __name__ == "__main__":
-    # Add your code here
     gui = GUI()
