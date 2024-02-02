@@ -113,8 +113,8 @@ if "__main__" == __name__:
     model = load_model("distilbert-base-cased")
     dataset_dict = split_data(df)
 
-    training_args = train.get_model_args()
-    trainer = train.train_model(model, dataset_dict, training_args, tokenizer)
-    predictor = train.get_predictions(trainer, dataset_dict)
-    print(train.get_score(predictor))
+    training_args = get_model_args()
+    trainer = train_model(model, dataset_dict, training_args, tokenizer)
+    predictor = get_predictions(trainer, dataset_dict)
+    print(get_score(predictor))
     trainer.save_model()
