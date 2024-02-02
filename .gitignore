@@ -4,6 +4,7 @@ data
 
 # keys 
 config.py
+notebook.ipynb
 
 # models
 distilbert-base-cased-finetuned
