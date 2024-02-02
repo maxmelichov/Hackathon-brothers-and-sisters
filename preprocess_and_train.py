@@ -3,7 +3,6 @@ import torch
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trainer, TrainingArguments
 from sklearn.model_selection import train_test_split
 from datasets import Dataset, DatasetDict
-import train
 import os
 from sklearn.metrics import accuracy_score, f1_score, recall_score, precision_score
 
