@@ -13,6 +13,9 @@ Our team at Hackathon Brothers and Sisters presents a powerful tool for detectin
 
 While currently capable of binary detection, our roadmap includes advancing it into a multi-class classification task ranging from 1 to 5 severity levels.
 
+Unfortunately, I was unable to obtain permission to access voice data for this project. However, I would like to recommend an alternative project that successfully utilizes voice data for classifying individuals with depression. You can find the project at the following link: [NUSD - Natural Utterance for Suicide Detection](https://github.com/kingformatty/NUSD?tab=readme-ov-file)
+
+
 Limits
 --------
 Please note that the text should not exceed 512 words, otherwise an error will occur.
