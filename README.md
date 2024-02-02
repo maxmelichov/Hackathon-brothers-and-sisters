@@ -13,6 +13,10 @@ Our team at Hackathon Brothers and Sisters presents a powerful tool for detectin
 
 While currently capable of binary detection, our roadmap includes advancing it into a multi-class classification task ranging from 1 to 5 severity levels.
 
+Limits
+--------
+Please note that the text should not exceed 512 words, otherwise an error will occur.
+
 Examples
 ---------
 
