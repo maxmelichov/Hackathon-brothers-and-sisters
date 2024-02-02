@@ -27,7 +27,7 @@ Input: "Social Media I recently deleted youtube and instagram so I could focus o
 
 Input: "Truly lost and aloneSlowly losing everyone in my life, I've been hemorrhaging friends and family for the past 6 years I'd say.\n\nThe only person in my family that still has any emotion for me is my aunty who I rarely even see anymore. I have next to no friends that I see anymore and even when I do I can tell they're itching to leave."
 
-![Example of a text from a person showing signs of depression](not%20healfy.jpg.jpg)
+![Example of a text from a person showing signs of depression](not_healfy.jpg)
 
 Key Features
 ------------
