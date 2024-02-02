@@ -1,4 +1,3 @@
-Replying to:
 Project: Depression Detection by Hackathon Brothers and Sisters
 ===============================================================
 
