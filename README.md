@@ -40,7 +40,7 @@ Training Process
 1.  **Download Datasets**: Obtain the datasets from the provided links.
 2.  **Data Preparation**: Place the CSV files into a folder named `data`.
 3.  **Environment Setup**: Activate the virtual environment.
-4.  **Run Training Script**: Execute `set CUDA_VISIBLE_DEVICES=2,3 & python my_script.py` in the project directory.
+4.  **Run Training Script**: Execute `set CUDA_VISIBLE_DEVICES=2,3 & python preprocess_and_train.py` in the project directory.
 
 GUI Usage
 ---------
